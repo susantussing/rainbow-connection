@@ -1,6 +1,5 @@
 <template>
     <div class="card" v-bind:style="styles">
-        {{ pattern.title }}
         <swatch v-for="color in pattern.colors" :color="color"/>
     </div>
 </template>
@@ -30,5 +29,14 @@ export default {
 
 
 <style>
-
+.card {
+    z-index: 100;
+    height: 80vh;
+    width: 80vh;
+    margin-top: 10vh;
+    margin-left: calc(50% - 40vh);
+    border-radius: 50%;
+    line-height: 80vh;
+    text-align: center;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="swatch" v-bind:style="styles">
-        {{ color }}
+        {{ '#' + color }}
     </div>
 </template>
 

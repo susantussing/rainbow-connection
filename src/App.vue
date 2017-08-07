@@ -1,7 +1,7 @@
 <template>
   <div id="app" @click="cycleColors">
-
-    <patternCard v-for="pattern in patterns" v-bind:pattern="pattern"/>
+    <!-- <div id="test" v-bind:class="currentColor"></div> -->
+     <patternCard v-for="pattern in patterns" v-bind:pattern="pattern" /> 
       
   </div>
 </template>
@@ -37,7 +37,7 @@ export default {
         params: {
           format: 'json',
           hueOption: this.currentColor,
-          numResults: 5
+          numResults: 1
         }
       }).then(function(response){
         self.patterns = response.data
@@ -51,7 +51,7 @@ export default {
     return {
       order: 0,
       patterns: [],
-      colors: ["red", "orange", "yellow", "green", "aqua", "blue", "violet", "fuschia"]
+      colors: ["red", "orange", "yellow", "green", "aqua", "blue", "violet"]
     }
   }
 }
@@ -62,5 +62,42 @@ export default {
 <style>
   #app {
     font-family: 'Lato', sans-serif;
+  }
+
+  #test {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+  }
+
+  #test.red {
+    background: conic-gradient(red 15%, rgba(0, 0, 0, 0) 0);
+  }
+
+  #test.orange {
+    background: conic-gradient(rgba(0, 0, 0, 0) 15%, orange 15% 30%, rgba(0, 0, 0, 0) 0);
+  }
+
+    #test.yellow {
+    background: conic-gradient(rgba(0, 0, 0, 0) 30%, yellow 30% 45%, rgba(0, 0, 0, 0) 0);
+  }
+
+      #test.green {
+    background: conic-gradient(rgba(0, 0, 0, 0) 45%, lime 45% 60%, rgba(0, 0, 0, 0) 0);
+  }
+
+        #test.aqua {
+    background: conic-gradient(rgba(0, 0, 0, 0) 60%, aqua 60% 75%, rgba(0, 0, 0, 0) 0);
+  }
+
+          #test.blue {
+    background: conic-gradient(rgba(0, 0, 0, 0) 75%, blue 75% 90%, rgba(0, 0, 0, 0) 0);
+  }
+
+            #test.violet {
+    background: conic-gradient(rgba(0, 0, 0, 0) 90%, purple 90% 100%, rgba(0, 0, 0, 0) 0);
   }
 </style>
