@@ -1,6 +1,6 @@
 <template>
     <div class="card" v-bind:style="styles">
-        <swatch v-for="color in pattern.colors" :color="color"/>
+        <swatch v-for="color in pattern.colors" :key="color.id" :color="color"/>
     </div>
 </template>
 

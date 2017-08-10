@@ -1,5 +1,5 @@
 <template>
-    <div class="swatch" v-bind:style="styles">
+    <div class="swatch" :style="styles">
         {{ '#' + color }}
     </div>
 </template>

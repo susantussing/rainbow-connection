@@ -1,7 +1,7 @@
 <template>
   <div id="app" @click="cycleColors">
     <!-- <div id="test" v-bind:class="currentColor"></div> -->
-     <patternCard v-for="pattern in patterns" v-bind:pattern="pattern" /> 
+     <patternCard v-for="pattern in patterns" :key="pattern.id" :pattern="pattern" /> 
       
   </div>
 </template>
